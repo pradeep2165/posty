@@ -22,12 +22,16 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255',
             'password'=>'required|confirmed'
         ]);
+        //create user
         User::create([
             'name' =>$request->name,
             'username'=>$request->username,
             'email'=>$request->email,
             'password'=>Hash::make($request->password),
         ]);
+        //signin user after signup
+        auth()->attempt($request->only('email', 'password'));
+
         return redirect()->route('dashboard');
         //store user
         //sign the user
