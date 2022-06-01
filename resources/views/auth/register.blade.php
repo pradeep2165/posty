@@ -47,8 +47,8 @@
                 @enderror
                 </div>
                 <div class="mb-4">
-                    <label for="confirm password" class="sr-only">Password again</label>
-                    <input type="password" name="password" id="password_confirmation" placeholder="Repeat Your Password"
+                    <label for="password_confirmation" class="sr-only">Password again</label>
+                    <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Repeat Your Password"
                     class="bg-gray-100 border-2 w-full p-4 rounded-lg " value="">
                     
                 </div>
