@@ -25,6 +25,8 @@
                     <a href="" class="font-bold">{{$post->user->name}} <span class="text-gray-600 text-sm">{{$post->created_at->diffForHumans()}}</span></a>
                     <p class="mb-2">{{$post->body}}</p>
                 </div>
+                @if ($post->ownedBy(auth()->user()))
+                    
                 <div>
                     <form action="{{route('posts.destroy', $post)}}" method="post">
                         @csrf
@@ -32,6 +34,8 @@
                         <button class="text-blue-500" type="submit">Delete</button>
                     </form>
                 </div>
+                @endif
+
                 <div class="flex items-center">
                     @auth                      
                     
