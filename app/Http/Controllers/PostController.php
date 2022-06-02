@@ -10,6 +10,11 @@ class PostController extends Controller
         return view('posts.index');
     }
     public function store(request $request){
-        
+        $this->validate($request, [
+            'body'=>'required'
+        ]);
+
+        $request->user()->posts()->create($request->only('body'));
+        return back();
     }
 }
