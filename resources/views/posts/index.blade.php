@@ -25,11 +25,9 @@
                     <a href="" class="font-bold">{{$post->user->name}} <span class="text-gray-600 text-sm">{{$post->created_at->diffForHumans()}}</span></a>
                     <p class="mb-2">{{$post->body}}</p>
                 </div>
-            @endforeach
-            
-
-            @else
-                
+            @endforeach            
+                {{$posts->links()}}
+        @else                
             There are not posts
         @endif
         </div>
