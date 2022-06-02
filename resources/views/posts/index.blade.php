@@ -20,12 +20,17 @@
         </div>
         </form>
         @if ($posts->count())
-            iterate
+            @foreach ($posts as $post)
+                <div class="mb-4">
+                    <a href="" class="font-bold">{{$post->user->name}} <span class="text-gray-600 text-sm">{{$post->created_at->diffForHumans()}}</span></a>
+                    <p class="mb-2">{{$post->body}}</p>
+                </div>
+            @endforeach
             
-                
+
             @else
                 
-            nothing to iterate
+            There are not posts
         @endif
         </div>
     </div>
