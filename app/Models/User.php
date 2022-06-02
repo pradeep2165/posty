@@ -37,7 +37,7 @@ class User extends Authenticatable
     /**
      * The attributes that should be cast.
      *
-     * @var array<string, string>
+     * @var array<string, string>0;
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
@@ -45,5 +45,8 @@ class User extends Authenticatable
 
     public function posts(){
         return $this->hasMany(Post::class);
+    }
+    public function likes(){
+        return $this->hasMany(Like::class);
     }
 }
